@@ -17,5 +17,6 @@ $ ionic platform add android
 $ ionic run android
 ```
 
-
+Remember to install lodash typings module with
+typings install lodash --save
 

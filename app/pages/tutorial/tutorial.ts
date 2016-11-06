@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { MenuController, NavController, LocalStorage , Storage, Platform } from 'ionic-angular';
 
 import { SignupPage } from '../signup/signup';
+import { HomePage } from '../home/home';
+
 
 import { UserProvider } from '../../providers/user-provider/user-provider';
 
@@ -26,24 +28,24 @@ export class TutorialPage {
   constructor(public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
     this.slides = [
       {
-        title: 'Welcome to <b>ErrandHQ</b>',
-        description: '<b>ErrandHQ</b> helps you get stuff done',
-        image: 'img/logo.png',
+        title: 'Welcome to <b>234Radio</b>',
+        description: '<b>234Radio</b> helps you get stuff done',
+        image: 'img/234radio.jpg',
       },
       {
         title: 'This is how <b>ErrandHQ</b> Works',
         description: 'You want to get stuff done but can not move around?',
-        image: 'img/logo.png',
+        image: 'img/234radio.jpg',
       },
       {
         title: 'Then what happens next?',
         description: 'Tell us you <i>Need Help</i>',
-        image: 'img/logo.png',
+        image: 'img/234radio.jpg',
       },
       {
         title: 'Need some tips to stay head on schedule??',
         description: 'Gain a <i>heads-up</i> by inviting friends</b>.',
-        image: 'img/logo.png',
+        image: 'img/234radio.jpg',
       }
     ];
 
@@ -59,7 +61,7 @@ export class TutorialPage {
 
   startApp() {
 
-    this.navCtrl.setRoot(SignupPage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   onSlideChangeStart(slider) {
