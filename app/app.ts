@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ionicBootstrap, Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen, Push } from 'ionic-native';
 
-
+import { HomePage } from './pages/home/home';
 import { TutorialPage } from './pages/tutorial/tutorial';
 import { VerifyPage } from './pages/verify/verify';
 
@@ -27,9 +27,9 @@ export class MyApp {
 
 
   pages : PageObj[] = [
-    //{ title: 'Home', component: HomePage, icon: 'contacts' },
-    //{ title: 'Trending', component: TrendingPage, icon: 'person', index:1 },
-    //{ title: 'Search Campaigns', component: HomePage, icon: 'search', index:2 },
+    { title: 'Home', component: HomePage, icon: 'contacts' },
+    { title: 'Favorites', component: HomePage, icon: 'person', index:1 },
+    { title: 'Submit a Report', component: HomePage, icon: 'search', index:2 },
     ////{ title: 'Messages', component: HomePage, icon: 'email', index:3 },
     //{ title: 'My Favorites', component: FavoritesPage, icon: 'bookmark', index:4 },
   ];

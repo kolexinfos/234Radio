@@ -10,14 +10,47 @@
 
 </ion-header>
 
-<ion-content >
+<ion-content class="cards-bg" >
 
-  <button dark (click)="play()">
-    <ion-icon name="play"></ion-icon>
-  </button>
-  <button dark (click)="pause()">
-    <ion-icon name="pause"></ion-icon>
-  </button>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="img/234radio.jpg">
+      </ion-avatar>
+      <!--<h2>Marty McFly</h2>-->
+      <!--<p>November 5, 1955</p>-->
+    </ion-item>
+
+    <img src="img/234radio.jpg"/>
+    <ion-card-content>
+      <h2 class="card-title">
+        234Radio Live!!!
+      </h2>
+      <p>
+        The best online radio platform is now a mobile app that can be installed and be used on the go.
+      </p>
+      </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button clear small color="danger" icon-left (click)="play()">
+          <ion-icon name='musical-notes'></ion-icon>
+          Listen
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-left (click)="pause()">
+          <ion-icon name='pause'></ion-icon>
+          Pause
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-card>
+
 
 
 </ion-content>
