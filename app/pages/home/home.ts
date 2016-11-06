@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {RadioPlayer} from '../../providers/radio-player/radio-player';
+
 /*
   Generated class for the HomePage page.
 
@@ -9,11 +11,23 @@ import { NavController } from 'ionic-angular';
 */
 @Component({
   templateUrl: 'build/pages/home/home.html',
+  providers: [RadioPlayer]
 })
 export class HomePage {
 
-  constructor(private navCtrl: NavController) {
+  player:any;
+  constructor(player: RadioPlayer) {
+    this.player = player;
+  }
 
+  play() {
+    this.player.play().then(() => {
+      console.log('Playing');
+    });
+  }
+
+  pause() {
+    this.player.pause();
   }
 
 }
