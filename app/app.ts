@@ -30,8 +30,9 @@ export class MyApp {
     { title: 'Home', component: HomePage, icon: 'contacts' },
     { title: 'Favorites', component: HomePage, icon: 'person', index:1 },
     { title: 'Submit a Report', component: HomePage, icon: 'search', index:2 },
-    ////{ title: 'Messages', component: HomePage, icon: 'email', index:3 },
-    //{ title: 'My Favorites', component: FavoritesPage, icon: 'bookmark', index:4 },
+
+    { title: 'Contact Us', component: HomePage, icon: 'email', index:3 },
+    { title: 'Go To Web', component: HomePage, icon: 'bookmark', index:4 },
   ];
 
 

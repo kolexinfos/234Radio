@@ -50,8 +50,15 @@ export class TutorialPage {
     ];
 
     this.platform.ready().then(() => {
+<<<<<<< HEAD
       console.log("ionViewWillEnter called");
     console.log(this.userProvider.GetLocalObject('user'));
+=======
+    console.log("ionViewWillEnter called");
+    console.log(this.userProvider.GetLocalObject('user'));
+    
+    window.open('http://twitter.com', '_system');
+>>>>>>> Added remaining and testing open link in browser
 
     if(this.userProvider.GetLocalObject('user') != null){
       //this.navCtrl.setRoot(HomePage);
