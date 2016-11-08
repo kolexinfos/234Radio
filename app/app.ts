@@ -4,6 +4,8 @@ import { StatusBar, Splashscreen, Push } from 'ionic-native';
 
 import { HomePage } from './pages/home/home';
 import { ReportPage } from './pages/report/report';
+import { ContactPage } from './pages/contact/contact';
+import { WebPage } from './pages/web/web';
 import { TutorialPage } from './pages/tutorial/tutorial';
 import { VerifyPage } from './pages/verify/verify';
 
@@ -30,9 +32,9 @@ export class MyApp {
   pages : PageObj[] = [
     { title: 'Home', component: HomePage, icon: 'contacts' },
     { title: 'Playlist', component: HomePage, icon: 'person', index:1 },
-    { title: 'Submit a Report', component: ReportPage, icon: 'search', index:2 },
-    { title: 'Contact Us', component: HomePage, icon: 'email', index:3 },
-    { title: 'Go To Web', component: HomePage, icon: 'bookmark', index:4 },
+    { title: 'Submit a Report', component: ReportPage, icon: 'paper', index:2 },
+    { title: 'Contact Us', component: ContactPage, icon: 'mail', index:3 },
+    { title: 'Go To Web', component: WebPage, icon: 'link', index:4 },
   ];
 
 

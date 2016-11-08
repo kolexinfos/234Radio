@@ -53,7 +53,7 @@ export class TutorialPage {
     console.log("ionViewWillEnter called");
     console.log(this.userProvider.GetLocalObject('user'));
     
-    window.open('http://twitter.com', '_system');
+    //window.open('http://twitter.com', '_system');
 
     if(this.userProvider.GetLocalObject('user') != null){
       //this.navCtrl.setRoot(HomePage);

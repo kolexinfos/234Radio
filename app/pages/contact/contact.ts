@@ -12,6 +12,8 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
+  report: {email?: string, message?: string, phone?: string,title?: string} = {};
+  
   constructor(private navCtrl: NavController) {
 
   }

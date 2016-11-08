@@ -12,8 +12,12 @@ import { NavController } from 'ionic-angular';
 })
 export class WebPage {
 
-  constructor(private navCtrl: NavController) {
-
+  constructor(private navCtrl: NavController) {}
+  
+  ionViewWillEnter()
+  {
+    console.log('Entered into the view');
+    window.open('http://twitter.com', '_system');
   }
 
 }
