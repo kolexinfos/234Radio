@@ -1,34 +1,71 @@
 <ion-header>
-	<ion-navbar>
+	<ion-navbar danger>
 		<ion-title>
 			Submit a Report
 		</ion-title>
+		
+		 <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 	</ion-navbar>
 </ion-header>
 
-<ion-content class="home" padding>
-    <form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)">
-        <ion-item [class.error]="!username.valid && username.touched">
-            <ion-label floating>Username</ion-label>
-            <ion-input type="text" value="" [ngFormControl]="username"></ion-input>         
+<ion-content class="home">
+     <ion-card>
+
+      <form #reportForm="ngForm" novalidate>
+        <ion-item>
+          <ion-label floating primary>Report Title</ion-label>
+          <ion-input [(ngModel)]="report.title" name="title" type="text" #title="ngModel" required></ion-input>
         </ion-item>
-        <div *ngIf="username.hasError('required') && username.touched" 
-            class="error-box">* Username is required!</div>
-        <div *ngIf="username.hasError('minlength') && username.touched" 
-            class="error-box">* Minimum username length is 8!</div>            
-        <div *ngIf="username.hasError('checkFirstCharacterValidator') && username.touched" 
-            class="error-box">* Username cant't start with number!</div>                       
-        <ion-item [class.error]="!password.valid && password.touched">
-            <ion-label floating>Password</ion-label>
-            <ion-input type="text" value="" [ngFormControl]="password" ></ion-input>
+        <div [hidden]="title.valid || title.untouched" >
+          <p  *ngIf="title.errors && title.errors.required" danger padding-left>
+            Title is required
+          </p>
+        </div>
+
+        <ion-item>
+          <ion-label floating primary>Email Address</ion-label>
+          <ion-input [(ngModel)]="report.email" name="email" type="text" #email="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          </ion-input>
         </ion-item>
-        <div *ngIf="password.hasError('required') && password.touched" 
-            class="error-box">* Password is required</div>    
-        <div *ngIf="password.hasError('minlength') && password.touched" 
-            class="error-box">* Minimum password length is 8!</div>                     
-        <div *ngIf="password.hasError('checkFirstCharacterValidator') && password.touched" 
-            class="error-box">* Password cant't start with number!</div>             
-        <br/><br/> 
-        <button type="submit" class="custom-button" [disabled]="!authForm.valid" block>Submit</button>
-    </form>
+        <div [hidden]="email.valid || email.untouched" >
+          <p  *ngIf="email.errors && email.errors.required" danger padding-left>
+            Email is required
+          </p>
+          <p *ngIf="email.errors && email.errors.pattern" danger padding-left>
+            Email is invalid
+          </p>
+        </div>
+        
+        <ion-item>
+          <ion-label floating primary>Phone</ion-label>
+          <ion-input [(ngModel)]="report.phone" name="phone" type="text" #phone="ngModel" required pattern="^[0-9]*$">
+          </ion-input>
+        </ion-item>
+        <div [hidden]="phone.valid || phone.untouched" >
+          <p  *ngIf="phone.errors && phone.errors.required" danger padding-left>
+            Phone Number is required
+          </p>
+          <p *ngIf="phone.errors && phone.errors.pattern" danger padding-left>
+            Phone Number is invalid. Enter a valid Phone number
+          </p>
+          </div>
+          
+          <ion-item>
+          <ion-label floating primary>Report Message</ion-label>
+          <ion-textarea [(ngModel)]="report.message" name="message" type="text" #message="ngModel" required></ion-textarea>
+         </ion-item>
+        <div [hidden]="message.valid || message.untouched" >
+          <p  *ngIf="message.errors && message.errors.required" danger padding-left>
+            Phone Number is required
+          </p>
+          </div>
+
+        <div padding>
+          <button (click)="onLogin(reportForm)" type="submit" danger block>Submit</button>
+        </div>
+
+      </form>
+  </ion-card>
 </ion-content>
