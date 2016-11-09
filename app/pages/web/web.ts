@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { HomePage } from '../home/home';
+
 /*
   Generated class for the WebPage page.
 
@@ -17,7 +19,9 @@ export class WebPage {
   ionViewWillEnter()
   {
     console.log('Entered into the view');
+    this.navCtrl.setRoot(HomePage);
     window.open('http://twitter.com', '_system');
+    
   }
 
 }

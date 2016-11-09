@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, LoadingController } from 'ionic-angular';
 import { FormBuilder,  ControlGroup, Validators, AbstractControl} from '@angular/common';
 import {CustomValidators} from '../validators/CustomValidators';
 
@@ -21,7 +21,10 @@ export class ReportPage {
     
     submit = false;
     
-    constructor(private navController: NavController, private messageProvider: MessageProvider) {
+    constructor(private navController: NavController, 
+    private messageProvider: MessageProvider,
+    private loadingCtrl: LoadingController)
+    {
        
     }
     
@@ -33,22 +36,38 @@ export class ReportPage {
         this.report.type = "report";
         if(form.valid){
             
+            let loadingPopup = this.loadingCtrl.create({
+                  content: 'Loading data...'
+            });
+            
+            loadingPopup.present();
+            
             this.messageProvider.CreateReport(this.report).subscribe(
                 data => {
                     console.log(data);
                     this.report = {};
                     
-                     Toast.show("Login was successful.", "short", 'bottom').subscribe(
+                    loadingPopup.dismiss();
+                     Toast.show("You report was submitted successfully.", "short", 'bottom').subscribe(
                             toast => {
                             console.log(toast);
                           }
                     );
                 },
                 err => {
+                    loadingPopup.dismiss();
+                    
                     console.log(err);
+                    
+                     Toast.show("An Error occurred please try again later", "short", 'bottom').subscribe(
+                            toast => {
+                            console.log(toast);
+                          }
+                    );
                 },
                 () => {
                     console.log('Finally called on CreateReport');
+                    loadingPopup.dismiss();
                 }
                 )
         }
