@@ -21,6 +21,7 @@ export class HomePage {
   }
 
   play() {
+    
     this.player.play().then(() => {
       console.log('Playing');
     });

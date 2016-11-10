@@ -33,7 +33,7 @@ export class ContactPage {
         console.log("The details in the form is " + form);
         this.submit = true;
         
-        this.report.type = "report";
+        this.report.type = "message";
         if(form.valid){
             
             let loadingPopup = this.loadingCtrl.create({

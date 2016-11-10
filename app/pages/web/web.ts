@@ -19,8 +19,10 @@ export class WebPage {
   ionViewWillEnter()
   {
     console.log('Entered into the view');
+    
+    window.open('http://234Radio.com', '_system');
+    
     this.navCtrl.setRoot(HomePage);
-    window.open('http://twitter.com', '_system');
     
   }
 
