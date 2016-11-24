@@ -29,17 +29,17 @@ export class TutorialPage {
     this.slides = [
       {
         title: 'Welcome to <b>234Radio</b>',
-        description: '<b>234Radio</b> helps you get stuff done',
+        description: 'Welcome to <b>234Radio</b>, your number one international online radio.',
         image: 'img/234radio.jpg',
       },
       {
-        title: 'This is how <b>ErrandHQ</b> Works',
-        description: 'You want to get stuff done but can not move around?',
+        title: 'Find <b>234Radio</b> on all social media platforms',
+        description: 'Follow us on Twitter: @my234radio and search for 234Radio on Facebook',
         image: 'img/234radio.jpg',
       },
       {
         title: 'Then what happens next?',
-        description: 'Tell us you <i>Need Help</i>',
+        description: 'Submit Eye-Witness report and get heard <i>Need Help</i>',
         image: 'img/234radio.jpg',
       },
       {
@@ -52,7 +52,7 @@ export class TutorialPage {
     this.platform.ready().then(() => {
     console.log("ionViewWillEnter called");
     console.log(this.userProvider.GetLocalObject('user'));
-    
+
     //window.open('http://twitter.com', '_system');
 
     if(this.userProvider.GetLocalObject('user') != null){
