@@ -20,8 +20,7 @@ export class HomePage {
     this.player = player;
   }
 
-  play() {
-    
+  startPlaying() {
     this.player.play().then(() => {
       console.log('Playing');
     });

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar hideBackButton="true" danger>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <!--<button menuToggle>-->
+      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--</button>-->
     <ion-title>Home</ion-title>
   </ion-navbar>
 
@@ -10,43 +10,60 @@
 
 </ion-header>
 
-<ion-content class="cards-bg" >
+<ion-content class="cards-bg icons-basic-page" >
 
 
   <ion-card>
 
-    <ion-item>
-      <ion-avatar item-left>
-        <img src="img/234radio.jpg">
-      </ion-avatar>
-      <!--<h2>Marty McFly</h2>-->
-      <!--<p>November 5, 1955</p>-->
-    </ion-item>
+    <!--<ion-item>-->
+      <!--<ion-avatar item-left>-->
+        <!--<img src="img/234radio.jpg">-->
+      <!--</ion-avatar>-->
+      <!--&lt;!&ndash;<h2>Marty McFly</h2>&ndash;&gt;-->
+      <!--&lt;!&ndash;<p>November 5, 1955</p>&ndash;&gt;-->
+    <!--</ion-item>-->
 
     <img src="img/234radio.jpg"/>
     <ion-card-content>
-      <h2 class="card-title">
+      <h2 class="card-title" danger>
         234Radio Live!!!
       </h2>
-      <p>
+      <p danger>
         The best online radio platform is now a mobile app that can be installed and be used on the go.
       </p>
       </ion-card-content>
 
-    <ion-row no-padding>
-      <ion-col text-left>
-        <button ion-button clear small color="danger" icon-left (click)="play()">
-          <ion-icon name='musical-notes'></ion-icon>
-          Listen
-        </button>
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-left (click)="pause()">
-          <ion-icon name='pause'></ion-icon>
-          Pause
-        </button>
-      </ion-col>
-    </ion-row>
+    <!--<ion-row no-padding>-->
+      <!--<ion-col text-left>-->
+        <!--<button ion-button clear small color="danger" icon-left (click)="play()">-->
+          <!--<ion-icon name='musical-notes'></ion-icon>-->
+          <!--Listen-->
+        <!--</button>-->
+      <!--</ion-col>-->
+      <!--<ion-col text-right>-->
+        <!--<button ion-button clear small color="danger" icon-left (click)="pause()">-->
+          <!--<ion-icon name='pause'></ion-icon>-->
+          <!--Pause-->
+        <!--</button>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50><ion-icon (click)="startPlaying()" ios="ios-play" md="md-play" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon ios="ios-recording" md="md-recording" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon ios="ios-mail" md="md-mail"  danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon ios="ios-list-box" md="md-list-box" danger></ion-icon><span danger></span></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50><ion-icon ios="ios-call" md="md-call" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon  ios="logo-facebook" md="logo-facebook" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon   ios="logo-twitter" md="logo-twitter" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon  ios="ios-link" md="md-link"  danger></ion-icon><span danger></span></ion-col>
+      </ion-row>
+
+    </ion-grid>
 
 
   </ion-card>

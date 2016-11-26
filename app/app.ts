@@ -26,7 +26,7 @@ interface PageObj {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TutorialPage;
+  rootPage: any = HomePage;
 
 
   pages : PageObj[] = [
@@ -44,37 +44,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
-
-
-
       Splashscreen.hide();
-      
-         var push = Push.init({
-        android: {
-          senderID: "126468130105"
-        },
-        ios: {
-          alert: "true",
-          badge: true,
-          sound: 'false'
-        },
-        windows: {}
-      });
-
-      push.on('registration', (data) => {
-        console.log(data.registrationId);
-        alert(data.registrationId.toString());
-      });
-      
-      push.on('notification', (data) => {
-        console.log(data);
-        alert("Hi, I am a push notification");
-      });
-      
-      push.on('error', (e) => {
-        console.log(e.message);
-      });
-
     });
 
   }
