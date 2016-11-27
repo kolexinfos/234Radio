@@ -8,6 +8,7 @@ import { ContactPage } from '../contact/contact';
 
 import {RadioPlayer} from '../../providers/radio-player/radio-player';
 
+declare var window;
 /*
   Generated class for the HomePage page.
 
@@ -19,6 +20,7 @@ import {RadioPlayer} from '../../providers/radio-player/radio-player';
   providers: [RadioPlayer]
 })
 export class HomePage {
+
 
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
@@ -76,6 +78,10 @@ export class HomePage {
   openInstagram(){
     let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes" );
     browser.show();
+  }
+
+  makeCall(passedNumber){
+    window.location = passedNumber;
   }
 
 }

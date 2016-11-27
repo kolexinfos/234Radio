@@ -37,4 +37,5 @@
         <variable name="SENDER_ID" value="126468130105" />
     </plugin>
     <plugin name="cordova-plugin-device" spec="~1.1.3" />
+    <access origin="tel:*" launch-external="yes"/>
 </widget>
