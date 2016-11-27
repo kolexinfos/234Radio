@@ -1,12 +1,12 @@
 <ion-header>
 	<ion-navbar danger>
 		<ion-title>
-			Submit a Report
+			Eye Witness
 		</ion-title>
-		
-		 <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+
+		 <!--<button menuToggle>-->
+      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--</button>-->
 	</ion-navbar>
 </ion-header>
 
@@ -37,7 +37,7 @@
             Email is invalid
           </p>
         </div>
-        
+
         <ion-item>
           <ion-label floating primary>Phone</ion-label>
           <ion-input [(ngModel)]="report.phone" name="phone" type="text" #phone="ngModel" required pattern="^[0-9]*$">
@@ -51,7 +51,7 @@
             Phone Number is invalid. Enter a valid Phone number
           </p>
           </div>
-          
+
           <ion-item>
           <ion-label floating primary>Report Message</ion-label>
           <ion-textarea [(ngModel)]="report.message" name="message" type="text" #message="ngModel" required></ion-textarea>

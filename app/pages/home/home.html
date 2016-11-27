@@ -48,22 +48,22 @@
       <!--</ion-col>-->
     <!--</ion-row>-->
 
-    <ion-grid>
+    <!--<ion-grid>-->
       <ion-row>
-        <ion-col width-50><ion-icon (click)="startPlaying()" ios="ios-play" md="md-play" danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon ios="ios-recording" md="md-recording" danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon ios="ios-mail" md="md-mail"  danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon ios="ios-list-box" md="md-list-box" danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon (click)="startPlaying()" ios="ios-play" md="md-play" danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="gotoReport()" ios="ios-recording" md="md-recording" danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="gotoContact()" ios="ios-mail" md="md-mail"  danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="gotoPrograms()" ios="ios-list-box" md="md-list-box" danger></ion-icon></ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-col width-50><ion-icon ios="ios-call" md="md-call" danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon  ios="logo-facebook" md="logo-facebook" danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon   ios="logo-twitter" md="logo-twitter" danger></ion-icon><span danger></span></ion-col>
-        <ion-col width-50><ion-icon  ios="ios-link" md="md-link"  danger></ion-icon><span danger></span></ion-col>
+        <ion-col width-50><ion-icon (click)="makeCall()" ios="ios-call" md="md-call" danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="openFacebook()" ios="logo-facebook" md="logo-facebook" danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="openTwitter()" ios="logo-twitter" md="logo-twitter" danger></ion-icon></ion-col>
+        <ion-col width-50><ion-icon (click)="openWeb()" ios="ios-link" md="md-link"  danger></ion-icon></ion-col>
       </ion-row>
 
-    </ion-grid>
+    <!--</ion-grid>-->
 
 
   </ion-card>

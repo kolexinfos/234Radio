@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, LoadingController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 
@@ -17,7 +17,7 @@ import {InAppBrowser, InAppBrowserRef} from 'ionic-native';
 })
 export class WebPage {
 
-  constructor(private navCtrl: NavController,public  platform: Platform) {}
+  constructor(private navCtrl: NavController,public  platform: Platform, public loadingCtrl: LoadingController) {}
 
   ionViewWillEnter()
   {
@@ -25,7 +25,7 @@ export class WebPage {
 
 
 
-    //this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(HomePage);
     //window.open('http://234radio.com', '_system');
 
     let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes" );
