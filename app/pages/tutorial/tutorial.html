@@ -1,15 +1,15 @@
 <ion-header no-shadow>
-  <ion-navbar>
+  <ion-navbar danger>
     <!--<button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
+    <!--  <ion-icon name="menu"></ion-icon>-->
     <!--</button>-->
     <ion-buttons end *ngIf="showSkip">
-      <button (click)="startApp()" primary>Skip</button>
+      <button (click)="startApp()" >Skip</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content no-bounce>
+<ion-content no-bounce class="getstart">
   <ion-slides [options]="{pager: true}" (ionWillChange)="onSlideChangeStart($event)">
     <ion-slide *ngFor="let slide of slides">
       <img [src]="slide.image" class="slide-image"/>
@@ -25,4 +25,5 @@
       </button>
     </ion-slide>
   </ion-slides>
+   
 </ion-content>
