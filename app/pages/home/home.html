@@ -33,22 +33,24 @@
       </p>
       </ion-card-content>
 
-    <!--<ion-row no-padding>-->
-      <!--<ion-col text-left>-->
-        <!--<button ion-button clear small color="danger" icon-left (click)="play()">-->
-          <!--<ion-icon name='musical-notes'></ion-icon>-->
-          <!--Listen-->
-        <!--</button>-->
-      <!--</ion-col>-->
-      <!--<ion-col text-right>-->
-        <!--<button ion-button clear small color="danger" icon-left (click)="pause()">-->
-          <!--<ion-icon name='pause'></ion-icon>-->
-          <!--Pause-->
-        <!--</button>-->
-      <!--</ion-col>-->
-    <!--</ion-row>-->
-
-    <!--<ion-grid>-->
+     <ion-slides [options]="{pager: true}" (ionWillChange)="onSlideChangeStart($event)">
+    <ion-slide>
+      <img src="img/gtb.jpg" class="slide-image"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="img/shoprite.jpg" class="slide-image"/>
+      
+    </ion-slide>
+    <ion-slide>
+      <img src="img/234radio.jpg" class="slide-image"/>
+      
+    </ion-slide>
+    <ion-slide>
+      <img src="img/gtb-logo.jpg" class="slide-image"/>
+      
+    </ion-slide>
+  </ion-slides>
+  
       <ion-row>
         <ion-col width-50><ion-icon (click)="startPlaying()" ios="ios-play" md="md-play" danger></ion-icon></ion-col>
         <ion-col width-50><ion-icon (click)="gotoReport()" ios="ios-recording" md="md-recording" danger></ion-icon></ion-col>
