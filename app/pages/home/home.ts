@@ -25,10 +25,10 @@ export class HomePage {
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
     this.player = player;
+    this.startPlaying();
   }
 
   startPlaying() {
-
     let loadingPopup = this.loadingCtrl.create({
       content: 'Loading please wait...'
     });

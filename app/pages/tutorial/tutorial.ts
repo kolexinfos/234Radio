@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
-import { MenuController, NavController, LocalStorage , Storage, Platform } from 'ionic-angular';
+import { MenuController, NavController, LocalStorage , Storage, Platform, LoadingController } from 'ionic-angular';
 
 import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
 
 
 import { UserProvider } from '../../providers/user-provider/user-provider';
+import {RadioPlayer} from '../../providers/radio-player/radio-player';
 
 
 
@@ -18,14 +19,18 @@ interface Slide {
 
 @Component({
   templateUrl: 'build/pages/tutorial/tutorial.html',
-  providers: [UserProvider]
+  providers: [UserProvider, RadioPlayer]
 })
 export class TutorialPage {
   slides: Slide[];
   showSkip = true;
 
+  player:any;
 
-  constructor(public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
+  constructor(public loadingCtrl: LoadingController, player: RadioPlayer,public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
+    this.player = player;
+    this.startPlaying();
+
     this.slides = [
       {
         title: 'Welcome to <b>234Radio</b>',
@@ -61,6 +66,18 @@ export class TutorialPage {
     });
   }
 
+  startPlaying() {
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading please wait...'
+    });
+
+    loadingPopup.present();
+
+    this.player.play().then(() => {
+      console.log('Playing');
+      loadingPopup.dismiss();
+    });
+  }
   startApp() {
 
     this.navCtrl.setRoot(HomePage);
