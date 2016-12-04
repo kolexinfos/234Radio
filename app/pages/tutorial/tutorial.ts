@@ -28,7 +28,7 @@ export class TutorialPage {
 
   constructor(public loadingCtrl: LoadingController, player: RadioPlayer,public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
     this.player = player;
-    //this.startPlaying();
+    this.startPlaying();
 
     this.slides = [
       {
@@ -95,7 +95,12 @@ export class TutorialPage {
   ionViewWillLeave() {
     // enable the root left menu when leaving the tutorial page
     this.menu.enable(true);
+    this.pause();
 
+  }
+
+  pause() {
+    this.player.pause();
   }
 
 }

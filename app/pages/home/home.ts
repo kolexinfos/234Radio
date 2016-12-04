@@ -23,14 +23,18 @@ export class HomePage {
   mySlideOptions = {
     initialSlide: 1,
     loop: true,
-    autoplay: 2000,
+    autoplay: 5000,
     pager:true
   };
+
+  playState: string;
 
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
     this.player = player;
-    //this.startPlaying();
+    this.playState = "pause";
+    this.startPlaying();
+    console.log("Constructor called");
   }
 
   startPlaying() {
@@ -46,8 +50,19 @@ export class HomePage {
     });
   }
 
+  changeState(){
+    if(this.playState == "play"){
+      this.playState = "pause"
+      this.pause();
+    }
+    else
+    {
+      this.playState = "play"
+      this.startPlaying();
+    }
+  }
   pause() {
-    //this.player.pause();
+    this.player.pause();
   }
 
   openWeb(){
