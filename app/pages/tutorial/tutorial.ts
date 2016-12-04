@@ -24,12 +24,11 @@ interface Slide {
 export class TutorialPage {
   slides: Slide[];
   showSkip = true;
-
   player:any;
 
   constructor(public loadingCtrl: LoadingController, player: RadioPlayer,public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
     this.player = player;
-    this.startPlaying();
+    //this.startPlaying();
 
     this.slides = [
       {

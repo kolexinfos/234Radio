@@ -20,12 +20,17 @@ declare var window;
   providers: [RadioPlayer]
 })
 export class HomePage {
-
+  mySlideOptions = {
+    initialSlide: 1,
+    loop: true,
+    autoplay: 2000,
+    pager:true
+  };
 
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
     this.player = player;
-    this.startPlaying();
+    //this.startPlaying();
   }
 
   startPlaying() {
@@ -42,7 +47,7 @@ export class HomePage {
   }
 
   pause() {
-    this.player.pause();
+    //this.player.pause();
   }
 
   openWeb(){
@@ -53,6 +58,10 @@ export class HomePage {
 
   gotoReport(){
     this.navCtrl.setRoot(ReportPage);
+  }
+
+  onSlideChangeStart(event){
+    console.log(event);
   }
 
   gotoContact(){
