@@ -3,7 +3,7 @@
 		<ion-title>
 		 Feedback
 		</ion-title>
-		
+
 		 <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -37,21 +37,18 @@
             Email is invalid
           </p>
         </div>
-        
+
         <ion-item>
           <ion-label floating primary>Phone</ion-label>
-          <ion-input [(ngModel)]="report.phone" name="phone" type="text" #phone="ngModel" required pattern="^[0-9]*$">
+          <ion-input [(ngModel)]="report.phone" name="phone" type="text" #phone="ngModel" pattern="^[0-9]*$">
           </ion-input>
         </ion-item>
         <div [hidden]="phone.valid || phone.untouched" >
-          <p  *ngIf="phone.errors && phone.errors.required" danger padding-left>
-            Phone Number is required
-          </p>
           <p *ngIf="phone.errors && phone.errors.pattern" danger padding-left>
             Phone Number is invalid. Enter a valid Phone number
           </p>
           </div>
-          
+
           <ion-item>
           <ion-label floating primary>Message</ion-label>
           <ion-textarea [(ngModel)]="report.message" name="message" type="text" #message="ngModel" required></ion-textarea>

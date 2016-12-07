@@ -51,13 +51,13 @@ export class HomePage {
   }
 
   changeState(){
-    if(this.playState == "play"){
-      this.playState = "pause"
+    if(this.playState == "pause"){
+      this.playState = "play"
       this.pause();
     }
     else
     {
-      this.playState = "play"
+      this.playState = "pause"
       this.startPlaying();
     }
   }

@@ -15,7 +15,8 @@ export class RadioPlayer {
   promise:any;
 
   constructor() {
-    this.url = "http://streaming.radio.co/s7f3695a64/listen";
+    this.url = "http://streaming.radio.co/s7f3695a64/low"
+      //"http://streaming.radio.co/s7f3695a64/listen";
     this.stream = new Audio(this.url);
   };
 

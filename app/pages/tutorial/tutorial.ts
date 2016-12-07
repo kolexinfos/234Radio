@@ -28,7 +28,7 @@ export class TutorialPage {
 
   constructor(public loadingCtrl: LoadingController, player: RadioPlayer,public platform: Platform, public navCtrl: NavController, public menu: MenuController, private userProvider: UserProvider) {
     this.player = player;
-    this.startPlaying();
+    //this.startPlaying();
 
     this.slides = [
       {
@@ -49,7 +49,7 @@ export class TutorialPage {
       {
         title: 'Need some tips to stay head on schedule??',
         description: 'Gain a <i>heads-up</i> by inviting friends</b>.',
-        image: 'img/234radio.jpg',
+        image: 'img/234radio.jpg'
       }
     ];
 
