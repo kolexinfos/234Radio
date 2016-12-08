@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
-import {InAppBrowser, InAppBrowserRef} from 'ionic-native';
+import {InAppBrowser, InAppBrowserRef, SocialSharing} from 'ionic-native';
 
 import { WebPage } from '../web/web';
 import { ReportPage } from '../report/report';
@@ -50,6 +50,14 @@ export class HomePage {
     });
   }
 
+  ShareApp() {
+  SocialSharing.share("234Radio", "234Radio", "http://www.preptitude.com/shoppa/gtb.jpg").then(() => {
+    console.log("Success");
+  }).catch(() => {
+    console.log("Error");
+  });
+}
+
   changeState(){
     if(this.playState == "pause"){
       this.playState = "play"
@@ -67,7 +75,7 @@ export class HomePage {
 
   openWeb(){
 
-    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes" );
+    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
 
@@ -85,22 +93,22 @@ export class HomePage {
 
   gotoPrograms(){
 
-    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com/programmes/', '_blank', "EnableViewPortScale=yes" );
+    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com/programmes/', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
 
   openFacebook(){
-    let browser: InAppBrowserRef = InAppBrowser.open('https://www.facebook.com/234radio', '_blank', "EnableViewPortScale=yes" );
+    let browser: InAppBrowserRef = InAppBrowser.open('https://www.facebook.com/234radio', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
 
   openTwitter(){
-    let browser: InAppBrowserRef = InAppBrowser.open('https://twitter.com/my234Radio', '_blank', "EnableViewPortScale=yes" );
+    let browser: InAppBrowserRef = InAppBrowser.open('https://twitter.com/my234Radio', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
 
   openInstagram(){
-    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes" );
+    let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
 

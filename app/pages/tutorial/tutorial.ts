@@ -42,13 +42,8 @@ export class TutorialPage {
         image: 'img/234radio.jpg',
       },
       {
-        title: 'Then what happens next?',
-        description: 'Submit Eye-Witness report and get heard <i>Need Help</i>',
-        image: 'img/234radio.jpg',
-      },
-      {
-        title: 'Need some tips to stay head on schedule??',
-        description: 'Gain a <i>heads-up</i> by inviting friends</b>.',
+        title: 'Be our reporter',
+        description: 'Submit iWitness report and get heard.',
         image: 'img/234radio.jpg'
       }
     ];

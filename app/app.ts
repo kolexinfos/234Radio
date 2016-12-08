@@ -32,7 +32,7 @@ export class MyApp {
   pages : PageObj[] = [
     { title: 'Home', component: HomePage, icon: 'contacts' },
     //{ title: 'Playlist', component: HomePage, icon: 'person', index:1 },
-    { title: 'Submit a Report', component: ReportPage, icon: 'paper', index:2 },
+    { title: 'iWitness', component: ReportPage, icon: 'paper', index:2 },
     { title: 'Contact Us', component: ContactPage, icon: 'mail', index:3 }
     //{ title: 'Go To Web', component: WebPage, icon: 'link', index:4 },
   ];
