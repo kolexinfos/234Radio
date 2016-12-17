@@ -11,16 +11,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MessageProvider {
 
-  url:string = 'https://shoppa.herokuapp.com/misc/';
+  url:string = 'https://shoppa.herokuapp.com/users/';
+  
+   headers =  new Headers({'Content' : 'application/json'});
+   options = new RequestOptions({ headers : this.headers});
   
   constructor(private http: Http) {}
 
-  CreateReport(report){
+  SendReport(report){
 
     let headers =  new Headers({'Content' : 'application/json'});
     let options = new RequestOptions({ headers : headers});
 
-    var response = this.http.post(this.url + 'createReport',report, options);
+    var response = this.http.post(this.url + 'sendEmail',report, options);
     return response;
   }
 

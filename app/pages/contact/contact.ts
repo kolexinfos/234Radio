@@ -42,7 +42,7 @@ export class ContactPage {
             
             loadingPopup.present();
             
-            this.messageProvider.CreateReport(this.report).subscribe(
+            this.messageProvider.SendReport(this.report).subscribe(
                 data => {
                     console.log(data);
                     this.report = {};
