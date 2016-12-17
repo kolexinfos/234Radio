@@ -13,6 +13,7 @@ export class RadioPlayer {
   url:string;
   stream:any;
   promise:any;
+  playing:boolean = false;
 
   constructor() {
     this.url = "http://streaming.radio.co/s7f3695a64/listen";
@@ -23,7 +24,10 @@ export class RadioPlayer {
   };
 
   play() {
+    if(this.playing != true){
     this.stream.play();
+      this.playing = true;
+
     this.promise = new Promise((resolve,reject) => {
       this.stream.addEventListener('playing', () => {
         resolve(true);
@@ -35,10 +39,16 @@ export class RadioPlayer {
     });
 
     return this.promise;
+    }
+
   };
 
   pause() {
-    this.stream.pause();
+    if(this.playing == true) {
+      this.stream.pause();
+      this.playing = false;
+    }
+
   };
 
 }

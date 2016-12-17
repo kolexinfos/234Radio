@@ -73,6 +73,8 @@ export class HomePage {
     this.player.pause();
   }
 
+
+
   openWeb(){
 
     let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes,location=no" );

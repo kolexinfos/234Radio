@@ -5,6 +5,8 @@ import {CustomValidators} from '../validators/CustomValidators';
 
 import { Toast, ImagePicker } from 'ionic-native';
 
+import { HomePage } from '../home/home';
+
 import { MessageProvider } from '../../providers/message-provider/message-provider';
 
 
@@ -61,6 +63,7 @@ export class ReportPage {
                     this.report = {};
 
                     loadingPopup.dismiss();
+                    this.navController.setRoot(HomePage);
                      Toast.show("You report was submitted successfully.", "short", 'bottom').subscribe(
                             toast => {
                             console.log(toast);

@@ -33,7 +33,7 @@ export class TutorialPage {
     this.slides = [
       {
         title: 'Welcome to <b>234Radio</b>',
-        description: 'Welcome to <b>234Radio</b>, your number one international online radio.',
+        description: 'Welcome to 234Radio, your number one international online radio.',
         image: 'img/234radio.jpg',
       },
       {
