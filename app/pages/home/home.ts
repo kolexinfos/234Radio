@@ -33,7 +33,7 @@ export class HomePage {
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
     this.player = player;
     this.playState = "pause";
-    this.startPlaying();
+    //this.startPlaying();
     console.log("Constructor called");
   }
 
@@ -69,8 +69,11 @@ export class HomePage {
       this.startPlaying();
     }
   }
+
   pause() {
-    this.player.pause();
+    //this.player.pause();
+    console.log('Pause Clicked');
+
   }
 
 
