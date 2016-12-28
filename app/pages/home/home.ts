@@ -20,14 +20,18 @@ declare var window;
   providers: [RadioPlayer]
 })
 export class HomePage {
-  mySlideOptions = {
+
+mySlideOptions = {
     initialSlide: 1,
     loop: true,
     autoplay: 5000,
     pager:true
   };
 
-  playState: string;
+  playState: string
+  
+  
+  
 
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
@@ -36,6 +40,26 @@ export class HomePage {
     //this.startPlaying();
     console.log("Constructor called");
   }
+  
+  Toggle() {
+    
+        var audioElement = <HTMLAudioElement>document.getElementById("toggle");
+        
+        console.log('Playback was toggled');
+        console.log(audioElement);
+        if(audioElement.paused)
+        {
+          
+          audioElement.play();
+          this.playState = "pause"
+        }
+        else
+        {
+          audioElement.pause();
+          this.playState = "play"
+        }
+    }
+
 
   startPlaying() {
     let loadingPopup = this.loadingCtrl.create({
@@ -58,28 +82,10 @@ export class HomePage {
   });
 }
 
-  changeState(){
-    if(this.playState == "pause"){
-      this.playState = "play"
-      this.pause();
-    }
-    else
-    {
-      this.playState = "pause"
-      this.startPlaying();
-    }
-  }
-
-  pause() {
-    //this.player.pause();
-    console.log('Pause Clicked');
-
-  }
 
 
 
   openWeb(){
-
     let browser: InAppBrowserRef = InAppBrowser.open('http://234radio.com', '_blank', "EnableViewPortScale=yes,location=no" );
     browser.show();
   }
