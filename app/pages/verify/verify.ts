@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Toast } from 'ionic-native'
+import { Toast, SocialSharing } from 'ionic-native'
 
-
+import { HomePage } from '../home/home';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 
 /*
@@ -21,7 +21,17 @@ export class VerifyPage {
   submitted = false;
 
   constructor(private navCtrl: NavController, private navParams: NavParams, private userProvider: UserProvider) {
+    this.ShareApp();
+    this.navCtrl.setRoot(HomePage);
 
+  }
+
+  ShareApp() {
+    SocialSharing.share("234Radio", "234Radio", "http://www.preptitude.com/shoppa/gtb.jpg").then(() => {
+      console.log("Success");
+    }).catch(() => {
+      console.log("Error");
+    });
   }
 
   verifyEmail(form){
