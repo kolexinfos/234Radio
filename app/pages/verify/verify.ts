@@ -22,13 +22,14 @@ export class VerifyPage {
 
   constructor(private navCtrl: NavController, private navParams: NavParams, private userProvider: UserProvider) {
     this.ShareApp();
-    this.navCtrl.setRoot(HomePage);
+
 
   }
 
   ShareApp() {
     SocialSharing.share("234Radio", "234Radio", "http://www.preptitude.com/shoppa/gtb.jpg").then(() => {
       console.log("Success");
+      this.navCtrl.setRoot(HomePage);
     }).catch(() => {
       console.log("Error");
     });

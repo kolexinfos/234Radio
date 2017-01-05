@@ -28,7 +28,6 @@ export class MyApp {
 
   rootPage: any = TutorialPage;
 
-
   pages : PageObj[] = [
     { title: 'Home', component: HomePage, icon: 'contacts' },
     //{ title: 'Playlist', component: HomePage, icon: 'person', index:1 },
@@ -48,6 +47,13 @@ export class MyApp {
 
       this.platform.registerBackButtonAction(() => {
         console.log("Back Button pressed");
+        if(this.nav.canSwipeBack()){
+          console.log("Swiped Back");
+        }
+        else{
+          console.log("exit");
+          console.log("exited")
+        }
       });
     });
 

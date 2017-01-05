@@ -29,9 +29,9 @@ mySlideOptions = {
   };
 
   playState: string
-  
-  
-  
+
+
+
 
   player:any;
   constructor(player: RadioPlayer, public navCtrl: NavController, public loadingCtrl: LoadingController) {
@@ -39,17 +39,39 @@ mySlideOptions = {
     this.playState = "pause";
     //this.startPlaying();
     console.log("Constructor called");
+
+
+
   }
-  
+
+  ionViewDidEnter() {
+    var audioElement = <HTMLAudioElement>document.getElementById("toggle");
+
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading please wait...'
+    });
+
+    loadingPopup.present();
+    audioElement.addEventListener("playing", function() { loadingPopup.dismiss();  }, true);
+
+  }
+
+  clearBusy(){
+    console.log("Playing now....");
+
+    //this.loadingPopup.dismiss();
+
+  }
+
   Toggle() {
-    
+
         var audioElement = <HTMLAudioElement>document.getElementById("toggle");
-        
+
         console.log('Playback was toggled');
         console.log(audioElement);
         if(audioElement.paused)
         {
-          
+
           audioElement.play();
           this.playState = "pause"
         }
@@ -95,7 +117,7 @@ mySlideOptions = {
   }
 
   onSlideChangeStart(event){
-    console.log(event);
+    //console.log(event);
   }
 
   gotoContact(){
